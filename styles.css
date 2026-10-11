@@ -44,12 +44,10 @@ h1, h2, h3, p { margin: 0; }
   grid-template-areas:
     "intro intro fraud fraud"
     "work stack fraud fraud"
-    "screens screens screens screens"
     "course course game game"
     "lang contact contact contact";
 }
 .a-intro { grid-area: intro; }
-.a-screens { grid-area: screens; }
 .a-fraud { grid-area: fraud; }
 .a-work { grid-area: work; }
 .a-stack { grid-area: stack; }
@@ -204,7 +202,6 @@ h3 { font-size: 22px; line-height: 1.2; }
       "intro intro"
       "fraud fraud"
       "work stack"
-      "screens screens"
       "course course"
       "game game"
       "lang lang"
@@ -216,7 +213,7 @@ h3 { font-size: 22px; line-height: 1.2; }
   .page { padding: 32px 16px 48px; }
   .bento {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-areas: "intro" "fraud" "screens" "work" "stack" "course" "game" "lang" "contact";
+    grid-template-areas: "intro" "fraud" "work" "stack" "course" "game" "lang" "contact";
   }
   .card { padding: 24px; }
   h1 { font-size: 40px; }
@@ -383,56 +380,5 @@ body {
   .js .a-intro h1 .word { opacity: 1; transform: none; }
 }
 
-/* ---------- Cardify screenshots ---------- */
+/* ---------- Cardify ---------- */
 .subtitle { font-size: 17px; color: var(--muted); margin-top: -8px; }
-
-.a-screens { padding: 32px 0 32px 32px; overflow: hidden; }
-.a-screens .row-between { padding-right: 32px; }
-.shots {
-  display: flex;
-  gap: 24px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 12px 32px 20px 4px;
-  scrollbar-width: thin;
-  scrollbar-color: #C4C7CE transparent;
-}
-.shots:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 12px; }
-.shot {
-  flex: 0 0 auto;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  scroll-snap-align: start;
-}
-.shot img {
-  display: block;
-  width: 200px;
-  height: auto;
-  aspect-ratio: 9 / 20;
-  object-fit: cover;
-  border-radius: 26px;
-  border: 6px solid var(--ink);
-  box-shadow: 0 18px 40px -18px rgba(22, 24, 29, 0.45), 0 0 40px -14px rgba(16, 112, 112, 0.45);
-  transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out);
-}
-.shot:hover img {
-  transform: translateY(-6px) rotate(-1deg);
-  box-shadow: 0 26px 50px -18px rgba(22, 24, 29, 0.5), 0 0 60px -6px rgba(16, 140, 140, 0.6);
-}
-.shot figcaption { font-size: 12px; color: var(--muted); }
-
-.js .a-screens.in .shot { animation: shot-in 0.7s var(--ease-out) both; }
-.js .a-screens.in .shot:nth-child(2) { animation-delay: 80ms; }
-.js .a-screens.in .shot:nth-child(3) { animation-delay: 160ms; }
-.js .a-screens.in .shot:nth-child(4) { animation-delay: 240ms; }
-.js .a-screens.in .shot:nth-child(5) { animation-delay: 320ms; }
-.js .a-screens.in .shot:nth-child(6) { animation-delay: 400ms; }
-@keyframes shot-in { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: none; } }
-
-@media (max-width: 600px) {
-  .a-screens { padding: 24px 0 24px 24px; }
-  .shot img { width: 170px; }
-}

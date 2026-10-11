@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Suzana Uvadiev — Portfolio</title>
+  <meta name="description" content="Suzana Uvadiev — Junior Software Developer. Mobile apps, backends and websites.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <div class="container">
+
+      <nav class="nav">
+        <span class="mono logo">suzana.dev</span>
+        <div class="nav-links">
+          <a href="#projects">Projects</a>
+          <a href="#">CV</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+
+      <main class="bento" id="projects">
+
+        <!-- Intro -->
+        <section class="card a-intro dark">
+          <div class="stack-14">
+            <span class="mono label label-accent">Junior Software Developer · Rishon LeZion</span>
+            <h1>Hi, I'm Suzana.</h1>
+            <p class="lead">B.Sc. in Computer Science. I build mobile apps, backends and websites — and I've been shipping real client sites since 2022.</p>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-accent" href="#">Download CV</a>
+            <a class="btn btn-ghost" href="#">GitHub</a>
+            <a class="btn btn-ghost" href="#">LinkedIn</a>
+          </div>
+        </section>
+
+        <!-- Final project: fraud detection -->
+        <section class="card a-fraud">
+          <div class="row-between">
+            <span class="mono label">01 · Final project</span>
+            <span class="mono badge">Owned the entire backend</span>
+          </div>
+          <div class="fraud-inner">
+            <div class="fraud-text">
+              <h2 class="h2-lg">Credit card fraud detection</h2>
+              <p class="body">An Android app that flags suspicious card transactions in real time. [ONE LINE ON HOW DETECTION WORKS]</p>
+              <div class="tags">
+                <span class="mono tag">Kotlin</span>
+                <span class="mono tag">Android</span>
+                <span class="mono tag">Firebase</span>
+              </div>
+              <div class="demo-controls">
+                <span class="muted small">Try it — simulate a purchase:</span>
+                <div class="btn-row-8">
+                  <button type="button" class="pill is-on" data-mode="normal" aria-pressed="true">Everyday purchase</button>
+                  <button type="button" class="pill" data-mode="flagged" aria-pressed="false">Suspicious purchase</button>
+                </div>
+              </div>
+              <a class="link-strong" href="#">Read the case study →</a>
+            </div>
+
+            <div class="phone" aria-live="polite">
+              <div class="phone-screen">
+                <span class="muted small">Latest transaction</span>
+
+                <div class="txn" data-view="normal">
+                  <div class="txn-card">
+                    <span class="txn-name">Coffee shop</span>
+                    <span class="txn-amount">₪18.00</span>
+                    <span class="muted xs">Local · usual time</span>
+                  </div>
+                  <div class="status status-ok">Approved — matches your usual pattern</div>
+                </div>
+
+                <div class="txn" data-view="flagged" hidden>
+                  <div class="txn-card">
+                    <span class="txn-name">Unknown merchant</span>
+                    <span class="txn-amount">₪4,890.00</span>
+                    <span class="muted xs">Abroad · 03:12 AM</span>
+                  </div>
+                  <div class="status status-warn">Flagged as suspicious — was this you?</div>
+                  <div class="txn-actions">
+                    <span class="txn-yes">Yes</span>
+                    <span class="txn-block">Block card</span>
+                  </div>
+                </div>
+
+                <span class="mono phone-foot">simulated demo</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Work -->
+        <section class="card a-work pad-28 spread">
+          <span class="mono label">Since 2022</span>
+          <div class="stack-8">
+            <h3>Kulialma Studio</h3>
+            <p class="body-sm">Web Builder · Team Lead, Web Development. Designing and building client websites.</p>
+          </div>
+        </section>
+
+        <!-- Toolbox -->
+        <section class="card a-stack accent pad-28 spread">
+          <span class="mono label label-light">Toolbox</span>
+          <div class="tags">
+            <span class="mono tag tag-light">Kotlin</span>
+            <span class="mono tag tag-light">Firebase</span>
+            <span class="mono tag tag-light">Android</span>
+            <span class="mono tag tag-light">[ADD]</span>
+            <span class="mono tag tag-light">[ADD]</span>
+          </div>
+        </section>
+
+        <!-- Course project -->
+        <section class="card a-course pad-32">
+          <span class="mono label">02 · Courses project</span>
+          <div class="media-placeholder mono">[SCREENSHOT / HOVER GIF]</div>
+          <h2>[COURSE PROJECT NAME]</h2>
+          <p class="body-sm">[WHAT IT DOES · YOUR ROLE]</p>
+          <div class="links">
+            <a href="#">Live demo →</a>
+            <a href="#">Code →</a>
+          </div>
+        </section>
+
+        <!-- Game -->
+        <section class="card a-game navy pad-32">
+          <span class="mono label label-accent">03 · Computer game</span>
+          <div class="media-placeholder media-dark">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#F4F2EE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M10 8l6 4-6 4z"></path></svg>
+            <span class="mono">Play in browser · or gameplay video</span>
+          </div>
+          <h2>[GAME TITLE]</h2>
+          <p class="body-sm on-dark">[GENRE · ENGINE · WHAT YOU BUILT]</p>
+          <div class="links">
+            <a href="#">Play →</a>
+            <a href="#">Code →</a>
+          </div>
+        </section>
+
+        <!-- Languages -->
+        <section class="card a-lang pad-28">
+          <span class="mono label">Languages</span>
+          <div class="stack-6 langs">
+            <span>Hebrew — native</span>
+            <span>English — very good</span>
+            <span>Russian — good</span>
+          </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="card a-contact dark contact" id="contact">
+          <h2 class="h2-md">Open to junior developer roles.</h2>
+          <a class="btn btn-light" href="#">Get in touch</a>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

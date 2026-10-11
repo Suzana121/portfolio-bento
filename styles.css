@@ -1,0 +1,228 @@
+:root {
+  --ink: #16181D;
+  --paper: #EEECE7;
+  --cream: #F4F2EE;
+  --white: #FFFFFF;
+  --accent: #2346E8;
+  --accent-soft: #A9B4FF;
+  --muted: #5A5F6B;
+  --body: #3D414B;
+  --on-dark: #C9CCD3;
+  --navy: #1E2130;
+  --radius: 24px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+a { color: var(--ink); }
+a:hover { color: var(--accent); }
+
+h1, h2, h3, p { margin: 0; }
+
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+.page { min-height: 100vh; padding: 48px 24px 64px; }
+.container { max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
+
+/* Nav */
+.nav { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.logo { font-size: 14px; font-weight: 500; }
+.nav-links { display: flex; gap: 20px; font-size: 15px; flex-wrap: wrap; }
+
+/* Bento grid */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  grid-template-areas:
+    "intro intro fraud fraud"
+    "work stack fraud fraud"
+    "course course game game"
+    "lang contact contact contact";
+}
+.a-intro { grid-area: intro; }
+.a-fraud { grid-area: fraud; }
+.a-work { grid-area: work; }
+.a-stack { grid-area: stack; }
+.a-course { grid-area: course; }
+.a-game { grid-area: game; }
+.a-lang { grid-area: lang; }
+.a-contact { grid-area: contact; }
+
+/* Cards */
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.card.dark { background: var(--ink); color: var(--cream); }
+.card.navy { background: var(--navy); color: var(--cream); }
+.card.accent { background: var(--accent); color: var(--white); }
+.card.dark a, .card.navy a { color: var(--cream); }
+.pad-28 { padding: 28px; }
+.pad-32 { padding: 32px; }
+.spread { justify-content: space-between; gap: 20px; }
+
+.a-intro { justify-content: space-between; gap: 28px; }
+.a-fraud { gap: 24px; }
+
+.stack-6 { display: flex; flex-direction: column; gap: 6px; }
+.stack-8 { display: flex; flex-direction: column; gap: 8px; }
+.stack-14 { display: flex; flex-direction: column; gap: 14px; }
+.row-between { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+/* Type */
+h1 { font-size: 52px; line-height: 1.02; font-weight: 700; letter-spacing: -0.02em; }
+h2 { font-size: 26px; line-height: 1.15; }
+h3 { font-size: 22px; line-height: 1.2; }
+.h2-lg { font-size: 34px; line-height: 1.08; letter-spacing: -0.01em; }
+.h2-md { font-size: 30px; line-height: 1.15; letter-spacing: -0.01em; }
+.lead { font-size: 18px; line-height: 1.5; color: var(--on-dark); max-width: 46ch; }
+.body { font-size: 16px; line-height: 1.55; color: var(--body); }
+.body-sm { font-size: 15px; line-height: 1.55; color: var(--body); }
+.body-sm.on-dark { color: var(--on-dark); }
+.label { font-size: 13px; color: var(--muted); }
+.label-accent { color: var(--accent-soft); }
+.label-light { color: #D9DEFF; }
+.muted { color: var(--muted); }
+.small { font-size: 13px; }
+.xs { font-size: 12px; }
+.langs { font-size: 16px; }
+
+/* Buttons */
+.btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn-row-8 { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn {
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-size: 15px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+.card .btn-accent { background: var(--accent); color: var(--white); font-weight: 500; }
+.card .btn-ghost { border: 1px solid #4A4F5A; color: var(--cream); }
+.card .btn-light { background: var(--cream); color: var(--ink); font-size: 16px; font-weight: 500; padding: 14px 24px; }
+.card .btn-ghost:hover { border-color: var(--cream); }
+.card .btn-accent:hover, .card .btn-light:hover { opacity: 0.9; }
+
+.pill {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  min-height: 44px;
+  cursor: pointer;
+  background: var(--white);
+  color: var(--ink);
+  border: 1px solid #C4C7CE;
+}
+.pill.is-on { background: var(--ink); color: var(--white); border-color: var(--ink); }
+
+/* Tags */
+.tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.tag { font-size: 12px; border: 1px solid #D5D7DC; padding: 6px 10px; border-radius: 8px; }
+.tag-light { border: 0; background: rgba(255, 255, 255, 0.16); }
+.badge { font-size: 12px; background: #E8ECFF; color: #1D36B8; padding: 6px 10px; border-radius: 999px; }
+
+.links { display: flex; gap: 16px; flex-wrap: wrap; font-size: 15px; font-weight: 500; }
+.link-strong { font-size: 15px; font-weight: 500; margin-top: 4px; }
+
+/* Media placeholders */
+.media-placeholder {
+  height: 200px;
+  border-radius: 16px;
+  background: #EEF0F4;
+  border: 1px dashed #B8BCC6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+.media-dark {
+  background: #2A2E40;
+  border-color: #5A6080;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--on-dark);
+}
+
+/* Fraud demo */
+.fraud-inner { display: flex; gap: 32px; align-items: center; }
+.fraud-text { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+.demo-controls { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+
+.phone {
+  flex: 0 0 auto;
+  align-self: center;
+  width: 250px;
+  height: 500px;
+  border-radius: 40px;
+  background: var(--ink);
+  padding: 12px;
+}
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  background: #F6F6F8;
+  padding: 28px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.txn { display: flex; flex-direction: column; gap: 14px; }
+.txn[hidden] { display: none; }
+.txn-card { background: var(--white); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 6px; }
+.txn-name { font-size: 15px; font-weight: 500; }
+.txn-amount { font-size: 26px; font-weight: 700; }
+.status { border-radius: 14px; padding: 14px; font-size: 14px; font-weight: 500; }
+.status-ok { background: #E3F4EA; color: #145C32; }
+.status-warn { background: #FDE8DE; color: #8A2E0A; }
+.txn-actions { display: flex; gap: 8px; }
+.txn-actions span { flex: 1; text-align: center; border-radius: 10px; padding: 10px 0; font-size: 13px; }
+.txn-yes { background: var(--ink); color: var(--white); }
+.txn-block { border: 1px solid var(--ink); }
+.phone-foot { margin-top: auto; font-size: 10px; color: #7A7F8A; text-align: center; }
+
+/* Contact */
+.contact { flex-direction: row; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; padding: 28px 32px; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .bento {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "intro intro"
+      "fraud fraud"
+      "work stack"
+      "course course"
+      "game game"
+      "lang lang"
+      "contact contact";
+  }
+}
+
+@media (max-width: 600px) {
+  .page { padding: 32px 16px 48px; }
+  .bento {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "intro" "fraud" "work" "stack" "course" "game" "lang" "contact";
+  }
+  .card { padding: 24px; }
+  h1 { font-size: 40px; }
+  .h2-lg { font-size: 28px; }
+  .fraud-inner { flex-direction: column; align-items: stretch; }
+}

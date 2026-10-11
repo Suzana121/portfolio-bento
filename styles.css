@@ -176,28 +176,22 @@ h3 { font-size: 22px; line-height: 1.2; }
   padding: 12px;
 }
 .phone-screen {
+  position: relative;
   width: 100%;
   height: 100%;
   border-radius: 30px;
-  background: #F6F6F8;
-  padding: 28px 18px 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+  overflow: hidden;
+  background: #FFFFFF;
 }
-.txn { display: flex; flex-direction: column; gap: 14px; }
-.txn[hidden] { display: none; }
-.txn-card { background: var(--white); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 6px; }
-.txn-name { font-size: 15px; font-weight: 500; }
-.txn-amount { font-size: 26px; font-weight: 700; }
-.status { border-radius: 14px; padding: 14px; font-size: 14px; font-weight: 500; }
-.status-ok { background: #E3F4EA; color: #145C32; }
-.status-warn { background: #FDE8DE; color: #8A2E0A; }
-.txn-actions { display: flex; gap: 8px; }
-.txn-actions span { flex: 1; text-align: center; border-radius: 10px; padding: 10px 0; font-size: 13px; }
-.txn-yes { background: var(--ink); color: var(--white); }
-.txn-block { border: 1px solid var(--ink); }
-.phone-foot { margin-top: auto; font-size: 10px; color: #7A7F8A; text-align: center; }
+.phone-screen img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.phone-screen img[hidden] { display: none; }
 
 /* Contact */
 .contact { flex-direction: row; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; padding: 28px 32px; }
@@ -321,30 +315,20 @@ body {
 .card .btn-ghost:hover { transform: translateY(-2px); box-shadow: 0 0 20px rgba(169, 180, 255, 0.25); }
 .pill:hover { transform: translateY(-1px); border-color: var(--ink); }
 .pill.is-on { box-shadow: 0 6px 18px -6px rgba(22, 24, 29, 0.5); }
-.pill[data-mode="flagged"].is-on { box-shadow: 0 6px 22px -4px rgba(217, 87, 30, 0.55); }
 
 /* Tags light up */
 .tag { transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease; }
 .card:not(.accent) .tag:hover { border-color: var(--accent); box-shadow: 0 0 14px rgba(var(--glow), 0.25); }
 .tag-light:hover { background: rgba(255, 255, 255, 0.28); }
 
-/* Phone: glow that follows the demo state */
+/* Phone: teal glow in the app's colours; screens fade in */
 .phone {
-  transition: box-shadow 0.5s ease;
-  box-shadow: 0 24px 50px -20px rgba(22, 24, 29, 0.55), 0 0 50px -10px rgba(20, 140, 70, 0.30);
+  box-shadow: 0 24px 50px -20px rgba(22, 24, 29, 0.55), 0 0 60px -8px rgba(16, 140, 140, 0.45);
 }
-.phone.is-flagged {
-  box-shadow: 0 24px 50px -20px rgba(22, 24, 29, 0.55), 0 0 60px -6px rgba(217, 87, 30, 0.50);
-}
-.txn:not([hidden]) { animation: txn-in 0.45s var(--ease-out); }
-@keyframes txn-in {
-  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+.phone-screen img:not([hidden]) { animation: screen-in 0.5s var(--ease-out); }
+@keyframes screen-in {
+  from { opacity: 0; transform: scale(1.03); }
   to   { opacity: 1; transform: none; }
-}
-.status-warn { animation: pulse-warn 1.8s ease-in-out 0.4s 2; }
-@keyframes pulse-warn {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(217, 87, 30, 0); }
-  50%      { box-shadow: 0 0 0 6px rgba(217, 87, 30, 0.18); }
 }
 
 /* Logo dot */

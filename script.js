@@ -1,26 +1,33 @@
-// Fraud-detection demo: switch between an everyday and a suspicious transaction.
-const buttons = document.querySelectorAll('.pill[data-mode]');
-const views = document.querySelectorAll('.txn[data-view]');
+// Cardify phone: switch between real app screenshots.
+const buttons = document.querySelectorAll('.pill[data-screen]');
+const shots = document.querySelectorAll('.phone-screen img[data-shot]');
+const order = [...buttons].map((b) => b.dataset.screen);
 
-buttons.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const mode = btn.dataset.mode;
-    buttons.forEach((b) => {
-      const on = b === btn;
-      b.classList.toggle('is-on', on);
-      b.setAttribute('aria-pressed', String(on));
-    });
-    views.forEach((v) => {
-      v.hidden = v.dataset.view !== mode;
-    });
+function showScreen(name) {
+  buttons.forEach((b) => {
+    const on = b.dataset.screen === name;
+    b.classList.toggle('is-on', on);
+    b.setAttribute('aria-pressed', String(on));
   });
-});
+  shots.forEach((img) => {
+    img.hidden = img.dataset.shot !== name;
+  });
+}
 
-// Phone glow follows the demo state.
-const phone = document.querySelector('.phone');
+// Rotate through the screens on its own until the visitor picks one.
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let current = 0;
+let timer = reduceMotion ? null : setInterval(() => {
+  current = (current + 1) % order.length;
+  showScreen(order[current]);
+}, 3500);
+
 buttons.forEach((btn) => {
   btn.addEventListener('click', () => {
-    phone.classList.toggle('is-flagged', btn.dataset.mode === 'flagged');
+    clearInterval(timer);
+    timer = null;
+    current = order.indexOf(btn.dataset.screen);
+    showScreen(btn.dataset.screen);
   });
 });
 

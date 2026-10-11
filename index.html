@@ -60,42 +60,23 @@
                 <span class="mono tag">Firebase</span>
               </div>
               <div class="demo-controls">
-                <span class="muted small">Try it — simulate a purchase:</span>
+                <span class="muted small">Take a look inside the app:</span>
                 <div class="btn-row-8">
-                  <button type="button" class="pill is-on" data-mode="normal" aria-pressed="true">Everyday purchase</button>
-                  <button type="button" class="pill" data-mode="flagged" aria-pressed="false">Suspicious purchase</button>
+                  <button type="button" class="pill is-on" data-screen="home" aria-pressed="true">Home</button>
+                  <button type="button" class="pill" data-screen="transactions" aria-pressed="false">Transactions</button>
+                  <button type="button" class="pill" data-screen="filters" aria-pressed="false">Filters</button>
+                  <button type="button" class="pill" data-screen="stats" aria-pressed="false">Stats</button>
                 </div>
               </div>
               <a class="link-strong" href="https://github.com/Suzana121/Smart-Credit-Card-Transaction-Analysis" target="_blank" rel="noopener">View the code on GitHub →</a>
             </div>
 
-            <div class="phone" aria-live="polite">
+            <div class="phone">
               <div class="phone-screen">
-                <span class="muted small">Latest transaction</span>
-
-                <div class="txn" data-view="normal">
-                  <div class="txn-card">
-                    <span class="txn-name">Coffee shop</span>
-                    <span class="txn-amount">₪18.00</span>
-                    <span class="muted xs">Local · usual time</span>
-                  </div>
-                  <div class="status status-ok">Approved — matches your usual pattern</div>
-                </div>
-
-                <div class="txn" data-view="flagged" hidden>
-                  <div class="txn-card">
-                    <span class="txn-name">Unknown merchant</span>
-                    <span class="txn-amount">₪4,890.00</span>
-                    <span class="muted xs">Abroad · 03:12 AM</span>
-                  </div>
-                  <div class="status status-warn">Flagged as suspicious — was this you?</div>
-                  <div class="txn-actions">
-                    <span class="txn-yes">Yes</span>
-                    <span class="txn-block">Block card</span>
-                  </div>
-                </div>
-
-                <span class="mono phone-foot">simulated demo</span>
+                <img src="images/cardify/home.jpg" alt="Cardify — Home screen" data-shot="home">
+                <img src="images/cardify/transactions.jpg" alt="Cardify — Transactions screen" data-shot="transactions" hidden>
+                <img src="images/cardify/filters.jpg" alt="Cardify — Filters screen" data-shot="filters" hidden>
+                <img src="images/cardify/stats.jpg" alt="Cardify — Stats screen" data-shot="stats" hidden>
               </div>
             </div>
           </div>

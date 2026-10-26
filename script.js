@@ -31,6 +31,18 @@ buttons.forEach((btn) => {
   });
 });
 
+// Course project: cycle through the site screenshots.
+document.querySelectorAll('[data-gallery]').forEach((gallery) => {
+  const imgs = gallery.querySelectorAll('img');
+  if (reduceMotion || imgs.length < 2) return;
+  let i = 0;
+  setInterval(() => {
+    imgs[i].hidden = true;
+    i = (i + 1) % imgs.length;
+    imgs[i].hidden = false;
+  }, 3000);
+});
+
 // ---------- Entrance animations ----------
 
 // Split the headline into words so they can rise in one by one.

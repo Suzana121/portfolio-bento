@@ -114,7 +114,11 @@
         <!-- Course project -->
         <section class="card a-course pad-32">
           <span class="mono label">02 · Courses project</span>
-          <div class="media-placeholder mono">[SCREENSHOT]</div>
+          <div class="media gallery" data-gallery>
+            <img src="images/courses/home.jpg" alt="Courses site — home page with feature cards" loading="lazy">
+            <img src="images/courses/why.jpg" alt="Courses site — why take our courses section" loading="lazy" hidden>
+            <img src="images/courses/login.jpg" alt="Courses site — login and sign-up form" loading="lazy" hidden>
+          </div>
           <h2>Online courses platform</h2>
           <p class="body-sm">A full-stack website for buying and taking online courses: sign-up and login, course pages with reviews, user profiles, a payment page and an admin panel. Includes password reset by email and embedded YouTube lessons.</p>
           <div class="tags">
@@ -132,9 +136,8 @@
         <!-- Game -->
         <section class="card a-game navy pad-32">
           <span class="mono label label-accent">03 · Computer game</span>
-          <div class="media-placeholder media-dark">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#F4F2EE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M10 8l6 4-6 4z"></path></svg>
-            <span class="mono">[GAMEPLAY VIDEO]</span>
+          <div class="media media-video">
+            <video src="media/game.mp4" poster="media/game-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="RPG 3D Game gameplay"></video>
           </div>
           <h2>RPG 3D Game</h2>
           <p class="body-sm on-dark">My attempt at a Skyrim-style 3D RPG, built in Godot with GDScript, with Claude as my coding partner. Player, NPCs, items and world systems.</p>
@@ -161,7 +164,10 @@
         <!-- Contact -->
         <section class="card a-contact dark contact" id="contact">
           <h2 class="h2-md">Open to junior developer roles.</h2>
-          <a class="btn btn-light" href="https://www.linkedin.com/in/suzana-masturov/" target="_blank" rel="noopener">Get in touch</a>
+          <a class="btn btn-light" href="https://www.linkedin.com/in/suzana-masturov/" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            Connect on LinkedIn
+          </a>
         </section>
 
       </main>

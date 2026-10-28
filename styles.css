@@ -44,10 +44,13 @@ h1, h2, h3, p { margin: 0; }
   grid-template-areas:
     "intro intro fraud fraud"
     "work stack fraud fraud"
+    "api api siem siem"
     "course course game game"
     "lang contact contact contact";
 }
 .a-intro { grid-area: intro; }
+.a-api { grid-area: api; }
+.a-siem { grid-area: siem; }
 .a-fraud { grid-area: fraud; }
 .a-work { grid-area: work; }
 .a-stack { grid-area: stack; }
@@ -202,6 +205,8 @@ h3 { font-size: 22px; line-height: 1.2; }
       "intro intro"
       "fraud fraud"
       "work stack"
+      "api api"
+      "siem siem"
       "course course"
       "game game"
       "lang lang"
@@ -213,7 +218,7 @@ h3 { font-size: 22px; line-height: 1.2; }
   .page { padding: 32px 16px 48px; }
   .bento {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-areas: "intro" "fraud" "work" "stack" "course" "game" "lang" "contact";
+    grid-template-areas: "intro" "fraud" "api" "siem" "work" "stack" "course" "game" "lang" "contact";
   }
   .card { padding: 24px; }
   h1 { font-size: 40px; }
@@ -407,3 +412,24 @@ body {
 
 /* ---------- Cardify ---------- */
 .subtitle { font-size: 17px; color: var(--muted); margin-top: -8px; }
+
+/* ---------- Code snippets (API + SIEM cards) ---------- */
+.code {
+  margin: 0;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: var(--ink);
+  color: #E6E8EE;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+  line-height: 1.7;
+  overflow-x: auto;
+  white-space: pre;
+}
+.code-dark { background: #0C0D11; box-shadow: inset 0 0 0 1px #2A2E3A; }
+.c-dim { color: #8A90A0; }
+.c-key { color: #A9B4FF; }
+.c-warn { color: #FFB38A; font-weight: 500; }
+.c-med { color: #F5C26B; }
+.c-crit { color: #FF8A8A; font-weight: 500; }
+.badge-dark { background: rgba(169, 180, 255, 0.16); color: #C9D0FF; }

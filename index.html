@@ -87,6 +87,57 @@
           </div>
         </section>
 
+        <!-- Cardify Fraud API -->
+        <section class="card a-api pad-32">
+          <div class="row-between">
+            <span class="mono label">02 · Backend rebuild</span>
+            <span class="mono badge">Live API</span>
+          </div>
+          <h2>Cardify Fraud API</h2>
+          <p class="body-sm">The core of my final project, rebuilt as a production-style service. Every transaction is scored against that user's own spending history by an explainable rule engine, and each flag says <em>why</em>.</p>
+          <pre class="code" aria-label="Example API response"><code><span class="c-dim">POST /transactions → </span><span class="c-warn">FLAGGED</span><span class="c-dim"> · risk 75</span>
+<span class="c-key">HIGH_AMOUNT_VS_MEDIAN</span>  +40  99.1× your median
+<span class="c-key">NEW_MERCHANT</span>           +20  first time here
+<span class="c-key">FOREIGN_CURRENCY</span>       +15  paid in USD</code></pre>
+          <div class="tags">
+            <span class="mono tag">FastAPI</span>
+            <span class="mono tag">PostgreSQL</span>
+            <span class="mono tag">JWT</span>
+            <span class="mono tag">pytest</span>
+            <span class="mono tag">Docker</span>
+            <span class="mono tag">GitHub Actions</span>
+            <span class="mono tag">Render</span>
+          </div>
+          <div class="links">
+            <a href="https://cardify-fraud-api.onrender.com/docs" target="_blank" rel="noopener">Live API docs →</a>
+            <a href="https://github.com/Suzana121/cardify-fraud-api" target="_blank" rel="noopener">Code →</a>
+          </div>
+        </section>
+
+        <!-- Mini-SIEM -->
+        <section class="card a-siem dark pad-32">
+          <div class="row-between">
+            <span class="mono label label-accent">03 · Security · in progress</span>
+            <span class="mono badge badge-dark">Stage 2 of 5</span>
+          </div>
+          <h2>Mini-SIEM</h2>
+          <p class="body-sm on-dark">A lightweight SIEM: ingests raw Linux auth logs, normalizes them to one schema, and runs 11 detection rules mapped to MITRE ATT&amp;CK, from SSH brute force to backdoor accounts.</p>
+          <pre class="code code-dark" aria-label="Example detection output"><code><span class="c-dim">10:15:44</span>  <span class="c-med">MEDIUM  </span>  ssh-brute-force          <span class="c-dim">T1110.001</span>
+<span class="c-dim">10:15:47</span>  <span class="c-crit">CRITICAL</span>  ssh-brute-force-success  <span class="c-dim">T1110</span>
+<span class="c-dim">10:16:12</span>  <span class="c-crit">CRITICAL</span>  backdoor-account         <span class="c-dim">T1136.001</span></code></pre>
+          <div class="tags">
+            <span class="mono tag tag-light">Python</span>
+            <span class="mono tag tag-light">FastAPI</span>
+            <span class="mono tag tag-light">Redis Streams</span>
+            <span class="mono tag tag-light">YAML rules</span>
+            <span class="mono tag tag-light">MITRE ATT&amp;CK</span>
+            <span class="mono tag tag-light">Docker</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/Suzana121/mini-siem" target="_blank" rel="noopener">Code →</a>
+          </div>
+        </section>
+
         <!-- Work -->
         <section class="card a-work pad-28 spread">
           <span class="mono label">Since 2022</span>
@@ -114,7 +165,7 @@
 
         <!-- Course project -->
         <section class="card a-course pad-32">
-          <span class="mono label">02 · Courses project</span>
+          <span class="mono label">04 · Courses project</span>
           <div class="media gallery" data-gallery>
             <img src="images/courses/home.jpg" alt="Courses site — home page with feature cards" loading="lazy">
             <img src="images/courses/why.jpg" alt="Courses site — why take our courses section" loading="lazy" hidden>
@@ -139,7 +190,7 @@
 
         <!-- Game -->
         <section class="card a-game navy pad-32">
-          <span class="mono label label-accent">03 · Computer game</span>
+          <span class="mono label label-accent">05 · Computer game</span>
           <div class="media media-video">
             <video src="media/game.mp4" poster="media/game-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="RPG 3D Game gameplay"></video>
           </div>
